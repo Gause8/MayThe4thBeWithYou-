@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="San Holo"
+            />
+        <TextView
+            android:id="@+id/tv_id_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/tv_height"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <TextView
+            android:id="@+id/tv_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toEndOf="@+id/tv_id_height"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            tools:text="4ft 10in"
+            />
+        <TextView
+            android:id="@+id/tv_id_mass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/tv_mass"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            app:layout_constraintStart_toEndOf="@id/tv_height"
+            />
+        <TextView
+            android:id="@+id/tv_mass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toEndOf="@+id/tv_id_mass"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            tools:text="200lb"
+            />
+        <TextView
+            android:id="@+id/tv_id_birth_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/tv_birth_year"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            app:layout_constraintStart_toEndOf="@id/tv_mass"
+            />
+        <TextView
+            android:id="@+id/tv_birth_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toEndOf="@+id/tv_id_birth_year"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            tools:text="A long time ago"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
