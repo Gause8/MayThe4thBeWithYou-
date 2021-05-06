@@ -7,6 +7,8 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface Api {
 
@@ -15,6 +17,9 @@ interface Api {
      */
     @GET("api/people/")
     suspend fun getPeople():Response<PersonResponse>
+
+    @GET("api/people/")
+    suspend fun getNextPage(@Query("page")page: String): Response<PersonResponse>
 
 
     /*

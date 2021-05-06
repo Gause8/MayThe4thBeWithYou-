@@ -1,6 +1,7 @@
 package com.example.maythefourthbewithyou.ui
 
 import android.app.Application
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
@@ -12,7 +13,12 @@ import com.example.maythefourthbewithyou.network.response.Result
 /*
 *   the adapter to display the people in the recycler view
  */
-class PersonAdapter(var dataSet: List<Result>): RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
+class PersonAdapter(var dataSet: List<Result>, val getData: GetData): RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
+
+    //used to send the position to the main activity
+    interface GetData{
+        fun getNextPage(i: Int)
+    }
     inner class PersonViewHolder(val binding: PersonItemLayoutBinding): RecyclerView.ViewHolder(binding.root) {
 
         private val personName: TextView = binding.tvName
@@ -43,5 +49,7 @@ class PersonAdapter(var dataSet: List<Result>): RecyclerView.Adapter<PersonAdapt
 
     override fun onBindViewHolder(holder: PersonViewHolder, position: Int) {
         holder.onBind(dataSet[position])
+        getData.getNextPage(position)
+
     }
 }
